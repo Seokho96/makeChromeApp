@@ -35,6 +35,7 @@ function paintToDo(text) {
     li.appendChild(delBtn);
     li.appendChild(span);
     li.id = newId;
+    delBtn.classList.add("delBtn");
     toDoList.appendChild(li);
     const toDoObj = {
         text: text,

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="index.css" />
 <html>
 
@@ -9,27 +11,48 @@
 
 <body>
   <!-- <h1  id="title" class="btn">This works</h1> -->
-  <div class="js-clock">
-    <h1>00:00</h1>
-    <form class="js-form form">
-      <input type="text" placeholder="What is your name"><br>
-    </form>
-    <span class="span hiding">press your Enter-Key !!</span>
-    <h4 class="js-greetings greetings"></h4>
-    <form class="js-toDoForm">
-      <input type="text" placeholder="Write a to do" />
-    </form>
-    <ul class="js-toDoList">
+  <div>
+        <div class="weatherForm">
+          <spanc class="js-weather"></spanc>
+          </div>
+  <div class="appForm">    
+        <div class="js-clock">
+          <div class="clockDiv"><h1 class="clock">00:00</h1></div>
+          <div class="wirteNameForm">
+            <form class="js-form form">
+              <input type="text" placeholder="What is your name" autocomplete="off"><br>
+            </form>
+          </div>
+          <!-- <span class="span hiding">press your Enter-Key !!</span> -->
 
-    </ul>
+          <div class="greet"><h4 class="js-greetings greetings"></h4></div>
+         <div class="toDo">
+            <form class="js-toDoForm">
+              <input type="text" placeholder="What is your main focus for today?"  autocomplete="off"/>
+            </form>
+            <div class="toDoListForm">
+              <ul class="js-toDoList">
+          
+              </ul>
+            </div>
+         </div>
+         
+            <!-- <script src="index.js"></script> -->
+        
+        </div>
+     
   </div>
+</div>
 
-  <!-- <script src="index.js"></script> -->
+
   <script src="clock.js"></script>
   <script src="gretting.js"></script>
   <script src="todo.js"></script>
+  <script src="bg.js"></script>
+  <script src="weather.js"></script>
 </body>
 
 
 
 </html>
+
