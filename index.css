@@ -2,7 +2,7 @@ body {
   background-color: #2c3e50;
 }
 
-input{
+input {
   background-color: transparent;
   text-align: center;
   border-top: none;
@@ -13,11 +13,13 @@ input{
   color: #d9dab0;
   width: 60%;
   font-size: 300%;
-  outline:none;
-  
+  outline: none;
+
 }
 
-input::-webkit-input-placeholder { color: white; }
+input::-webkit-input-placeholder {
+  color: white;
+}
 
 .appForm {
   text-align: center;
@@ -25,13 +27,13 @@ input::-webkit-input-placeholder { color: white; }
   top: 100px;
 }
 
-.greet{
+.greet {
   position: relative;
   bottom: 100px;
 }
 
 
-.clock{
+.clock {
   font-size: 700%;
   font-family: 'Gothic A1', sans-serif;
 }
@@ -46,9 +48,9 @@ input::-webkit-input-placeholder { color: white; }
 }
 
 .delBtn {
-background-color: transparent;
-border: none;
-outline:none;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 h1 {
@@ -60,7 +62,7 @@ h1 {
   color: #7f8c8d;
 }
 
-.greetings{
+.greetings {
   display: none;
   font-size: 400%;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -84,13 +86,13 @@ h4 {
   font-size: 50%;
 }
 
-.toDo{
+.toDo {
   position: relative;
   bottom: 170px;
 }
 
-ul{
- font-size: 200%;
+ul {
+  font-size: 200%;
 }
 
 li {
@@ -122,7 +124,7 @@ spanc {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  
   z-index: -1;
   animation: fadeIn 0.5s linear;
 }

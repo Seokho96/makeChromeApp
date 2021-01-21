@@ -41,13 +41,13 @@ function paintGreeting(text) {
     //  span.classList.add(HIDING);
     greeting.classList.add(SHOWING_CN);
     const timeCheck = getTime()
-    
+
     if (8 <= timeCheck && timeCheck <= 11) {
         greeting.innerHTML = `Good Morning!&nbsp; ${text}`;
-    } 
+    }
     if (12 <= timeCheck && timeCheck <= 13) {
         greeting.innerHTML = `Have a good lunch!&nbsp; ${text}`;
-    } 
+    }
     if (14 <= timeCheck && timeCheck <= 16) {
         greeting.innerHTML = `Aren't you sleepy?&nbsp; ${text}`;
     }
@@ -66,8 +66,8 @@ function paintGreeting(text) {
     if (5 <= timeCheck && timeCheck <= 7) {
         greeting.innerHTML = `You start the day early!&nbsp; ${text}`;
     }
-    
-    
+
+
 
 
 }

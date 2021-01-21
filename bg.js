@@ -11,7 +11,7 @@ function paintImage(imgNumber) {
     image.src = `images/${imgNumber + 1}.jpg`;
     image.classList.add("bgImage");
     body.prepend(image);
-  // image.addEventListener("loadend",handleImgLoad);
+    // image.addEventListener("loadend",handleImgLoad);
 
 }
 
