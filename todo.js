@@ -8,6 +8,8 @@ let toDos = [];
 
 function deleteToDo(event) {
     //console.log(event.target.parentNode);
+    toDoForm.classList.remove("hiding");
+    toDoForm.classList.add("showing");
     const btn = event.target;
     const li = btn.parentNode;
     toDoList.removeChild(li);
@@ -42,6 +44,10 @@ function paintToDo(text) {
         id: newId
     };
     toDos.push(toDoObj);
+    if(toDos.length > 2){
+        toDoForm.classList.remove("showing");
+        toDoForm.classList.add("hiding");
+    }
     saveToDos();
 }
 
