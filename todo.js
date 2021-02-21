@@ -4,7 +4,6 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
-
 let toDos = [];
 
 function deleteToDo(event) {
@@ -25,6 +24,7 @@ function saveToDos() {
 }
 
 function paintToDo(text) {
+    toDoInput.placeholder = "What is your main focus for today?";
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
@@ -48,12 +48,23 @@ function paintToDo(text) {
 function handleSubmit(event) {
     event.preventDefault();
     const currentValue = toDoInput.value;
+    if(toDos.length > 2){
+        toDoInput.placeholder = "Too many toDos!!"
+        toDoInput.value = "";
+        return false;
+    }
+    if(currentValue === ""){
+        toDoInput.placeholder = "No Blank!!"
+       return false;
+    }
     paintToDo(currentValue);
     toDoInput.value = "";
 }
 
 function loadToDO() {
     const loadedToDoS = localStorage.getItem(TODOS_LS);
+    //const currentUser = localStorage.getItem(USER_LS);
+  
     if (loadedToDoS !== null) {
         const parseToDos = JSON.parse(loadedToDoS);
         parseToDos.forEach(function (toDo) {

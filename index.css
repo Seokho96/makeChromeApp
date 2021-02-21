@@ -1,8 +1,20 @@
-body {
-  background-color: #2c3e50;
+body { 
+  height: 100vh;
+  background-repeat : no-repeat;
+  background-size : cover;
+  overflow-y:hidden;
 }
 
-input {
+.clockDiv{
+  width: 100%;
+  opacity: 0;
+}
+
+.wirteNameForm{
+  width: 100%;
+  opacity: 0;
+}
+.nameInput{
   background-color: transparent;
   text-align: center;
   border-top: none;
@@ -10,11 +22,25 @@ input {
   border-right: none;
   border-bottom: 1px solid white;
   font-weight: bold;
-  color: #d9dab0;
-  width: 60%;
-  font-size: 300%;
+  color: #ffffff;
+  width: 38%;
+  font-size: 5vw;
   outline: none;
-
+  font-family: 'Amatic SC', cursive, 'Noto Sans KR', sans-serif;
+}
+.toDoInput {
+  background-color: transparent;
+  text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid white;
+  font-weight: bold;
+  color: #ffffff;
+  width: 60%;
+  font-size: 5vw;
+  outline: none;
+  font-family: 'Amatic SC', cursive, 'Noto Sans KR', sans-serif;
 }
 
 input::-webkit-input-placeholder {
@@ -24,22 +50,23 @@ input::-webkit-input-placeholder {
 .appForm {
   text-align: center;
   position: relative;
-  top: 100px;
+ 
 }
 
 .greet {
   position: relative;
   bottom: 100px;
+  opacity: 0;
 }
 
 
 .clock {
-  font-size: 700%;
+  font-size: 7vw;
   font-family: 'Gothic A1', sans-serif;
 }
 
 .weatherForm {
-  text-align: right;
+  text-align: left;
   height: 100%;
 }
 
@@ -64,7 +91,7 @@ h1 {
 
 .greetings {
   display: none;
-  font-size: 400%;
+  font-size: 5vw;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -89,10 +116,13 @@ h4 {
 .toDo {
   position: relative;
   bottom: 170px;
+  opacity: 0;
 }
 
 ul {
-  font-size: 200%;
+  font-size: 2.5vw;
+  position: relative;
+  list-style: none;
 }
 
 li {
@@ -104,8 +134,15 @@ spanc {
 }
 
 .toDoListForm {
+  width: 100%;
+  text-align: left;
+  
+ 
+}
+
+.clockDown{
   position: relative;
-  right: 145px;
+  top: 25px;
 }
 
 @keyframes fadeIn {
@@ -128,3 +165,14 @@ spanc {
   z-index: -1;
   animation: fadeIn 0.5s linear;
 }
+
+.greetings {
+
+  font-family: 'Amatic SC', cursive, 'Noto Sans KR', sans-serif;
+}
+.name {
+  font-family: 'Nanum Gothic Coding', monospace; 
+  font-weight: normal;
+}
+
+

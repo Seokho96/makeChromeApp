@@ -1,6 +1,7 @@
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
-    greeting = document.querySelector(".js-greetings");
+    greeting = document.querySelector(".js-greetings"),
+    toDo = document.querySelector(".toDo");
 // span = document.querySelector(".span");
 
 const USER_LS = "currentUser",
@@ -26,8 +27,22 @@ function saveName(text) {
 function handleSubmit(event) {
     event.preventDefault();
     const currentValue = input.value;
+    if(currentValue === ""){
+        input.value= "";
+            input.setAttribute("placeholder","No blanks!");
+            return false;
+      }
+      if(currentValue.length > 9){
+        input.value= "";
+        input.setAttribute("placeholder","Too Long Name!");
+       // input.focus();
+       return false;
+      }
+    
+    toDo.classList.add(SHOWING_CN);
     paintGreeting(currentValue);
     saveName(currentValue);
+
 }
 
 function askForName() {
@@ -42,31 +57,35 @@ function paintGreeting(text) {
     greeting.classList.add(SHOWING_CN);
     const timeCheck = getTime()
 
+    let txt = "";
+    const name = `<span class='name'>${text}</span>`;
     if (8 <= timeCheck && timeCheck <= 11) {
-        greeting.innerHTML = `Good Morning!&nbsp; ${text}`;
+        txt = `${name}! Good Morning!`;
     }
     if (12 <= timeCheck && timeCheck <= 13) {
-        greeting.innerHTML = `Have a good lunch!&nbsp; ${text}`;
+        txt = `${name}! Have a good lunch!&nbsp;`;
     }
     if (14 <= timeCheck && timeCheck <= 16) {
-        greeting.innerHTML = `Aren't you sleepy?&nbsp; ${text}`;
+        txt = `${name}, Aren't you sleepy? ${text}`;
     }
     if (17 <= timeCheck && timeCheck <= 18) {
-        greeting.innerHTML = `It's time to get off work soon!&nbsp; ${text}`;
+        txt = `${name}, Have you decided on your dinner menu?`;
     }
     if (19 <= timeCheck && timeCheck <= 22) {
-        greeting.innerHTML = `You did a great job. Take a rest today!&nbsp; ${text}`;
+        txt = `${name}! You did a great job!`;
     }
-    if (23 == timeCheck && timeCheck == 1 && timeCheck == 24) {
-        greeting.innerHTML = `Time to go to sleep!&nbsp; ${text}`;
+    if ( timeCheck === 23|| timeCheck === 0 || timeCheck === 1 ) {
+        txt = `${name}! Time to go to sleep!`;
+        
     }
     if (2 <= timeCheck && timeCheck <= 4) {
-        greeting.innerHTML = `Are you an owl?&nbsp; ${text}`;
+        txt = `${name}! Are you an owl?`;
     }
     if (5 <= timeCheck && timeCheck <= 7) {
-        greeting.innerHTML = `You start the day early!&nbsp; ${text}`;
+        txt = `${name}! You start the day early! `;
     }
 
+    greeting.innerHTML= txt;
 
 
 
@@ -76,12 +95,34 @@ function loadName() {
     const currentUser = localStorage.getItem(USER_LS);
     if (currentUser === null) {
         askForName();
+        toDo.classList.add(HIDING);
     } else {
         paintGreeting(currentUser);
+        toDo.classList.add(SHOWING_CN);
     }
 }
 
+function animate(){
+    const jbTime = 1000;
+    $('.clockDiv' ).animate( {
+      opacity: '1'
+    }, jbTime, function() {
+      $(  '.wirteNameForm' ).animate( {
+        opacity: '1'
+      });
+      $('.greet').animate({
+        opacity: '1'
+      }, jbTime, function(){
+        $('.toDo').animate({
+            opacity: '1'
+          });
+      });
+    
+    } );
+}
+
 function init() {
+    animate();
     loadName();
     setInterval(loadName, 60000);
 }
